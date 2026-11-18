@@ -1,0 +1,24 @@
+{
+  // Skill showcase assets.
+  //
+  // These files are templates that the shadcn skill copies into a consuming
+  // application. They live outside `frontend/` but import from the frontend
+  // conventions (`@/lib/utils`) and React, so they are mapped back to the
+  // frontend workspace to keep the editor free of false errors.
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "Preserve",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./../frontend/src/*"]
+    },
+    "typeRoots": ["../node_modules/@types"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
+}

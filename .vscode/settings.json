@@ -1,0 +1,23 @@
+{
+  "python.terminal.useEnvFile": true,
+
+  // Use the workspace TypeScript (6.0.3) instead of VS Code's bundled
+  // version. The backend relies on `moduleResolution: "bundler"`, which is
+  // required to resolve packages that only expose types through the
+  // `exports` map (e.g. `livekit-server-sdk`). Without this the editor
+  // reports "Cannot find module" for code that `tsc` compiles cleanly.
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.disableAutomaticTypeAcquisition": true,
+
+  // Let the ESLint extension pick up each workspace's flat config
+  // (backend/, frontend/) instead of only the repository root.
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  // Share the ignore list with the markdownlint CLI so the editor and CI
+  // report the same findings.
+  "markdownlint.ignoreFile": ".markdownlintignore",
+
+  "editor.formatOnSave": true,
+  "files.eol": "\n"
+}

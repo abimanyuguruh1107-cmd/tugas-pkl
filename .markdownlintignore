@@ -1,0 +1,36 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Editor and IDE
+.vscode/
+.idea/
+
+# Tooling and skill assets — not owned by this repository's content.
+# These are installed/managed by the agent tooling and are linted upstream.
+.agents/
+.claude/
+.clinerules/
+.gordon/
+.github/skills/
+.specify/
+
+# Lockfiles and vendored specs
+package-lock.json
+bun.lock
+
+# Product requirements document — supplied as a fixed input artifact.
+meetrix-enterprise-meeting-platform-prd.md
+
+# Agent-generated working documents kept for reference. They are scratch
+# notes rather than maintained documentation, so they are not linted.
+backend/COMPLETE_ARCHITECTURE_REVIEW.md
+backend/COMPLETE_REVIEW.md
+backend/IMPLEMENTATION_PLAN_T035_T085.md
+backend/IMPLEMENTATION_STATUS_T035_T085.md
+backend/MEETING_IMPLEMENTATION_SUMMARY.md
+backend/T005_IMPLEMENTATION_SUMMARY.md
+backend/T010_IMPLEMENTATION_SUMMARY.md
+backend/PSEUDOCODE_T045_T060_T065_T070_T080_T085.md

@@ -1,0 +1,50 @@
+{
+  "name": "merb-starterpack",
+  "private": true,
+  "packageManager": "bun@1.4.0",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "typecheck:infra": "tsc -p infra/tsconfig.json --noEmit",
+    "typecheck:agents": "tsc -p .agents/tsconfig.json --noEmit",
+    "typecheck:all": "bun run typecheck && bun run typecheck:infra && bun run typecheck:agents",
+    "lint": "turbo run lint",
+    "lint:md": "markdownlint \"**/*.md\"",
+    "lint:md:fix": "markdownlint \"**/*.md\" --fix",
+    "dev:backend": "bun --cwd backend dev",
+    "dev:frontend": "bun --cwd frontend dev",
+    "dev:worker": "bun --cwd backend worker",
+    "seed": "bun --cwd backend seed",
+    "stack:up": "docker compose --env-file backend/.env up -d mongo redis livekit turn",
+    "stack:down": "docker compose down",
+    "stack:full": "docker compose --env-file backend/.env up --build"
+  },
+  "devDependencies": {
+    "@pulumi/digitalocean": "^4.85.0",
+    "@pulumi/pulumi": "^3.276.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "markdownlint-cli": "^0.50.0",
+    "turbo": "^2",
+    "typescript": "^6.0.2"
+  },
+  "overrides": {
+    "glob": "^14.0.2",
+    "postcss-selector-parser": "^6.1.5",
+    "minimatch": "^11.0.1",
+    "eslint-plugin-import-x": "^4.18.1",
+    "seroval": "^1.8.0",
+    "seroval-plugins": "^1.8.0",
+    "sharp": "^0.35.5",
+    "undici": "^7.30.1"
+  },
+  "dependencies": {
+    "express-rate-limit": "^8.7.4"
+  }
+}
